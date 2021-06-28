@@ -1,3 +1,5 @@
+unified_mode true
+
 describe port(53) do
   it { should be_listening }
   its('processes') { should include 'named' }

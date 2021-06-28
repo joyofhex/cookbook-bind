@@ -1,11 +1,5 @@
 #!/usr/bin/env rake
 
-# foodcritic rake task
-desc 'Foodcritic linter'
-task :foodcritic do
-  sh 'foodcritic -f correctness .'
-end
-
 # rubocop rake task
 desc 'Chef cookbook style linting'
 task :cookstyle do
@@ -31,5 +25,5 @@ task :integration, [:os] do |_t, args|
   instances.get_all(/#{args.os}/).each(&:test)
 end
 
-task lint: %w(foodcritic cookstyle)
+task lint: %w(cookstyle)
 task default: %w(lint unit)

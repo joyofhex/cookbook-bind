@@ -67,7 +67,7 @@ describe 'bind::default' do
 
   context 'on virtual guest for any platform' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'redhat', version: '6.8') do |node|
+      ChefSpec::ServerRunner.new(platform: 'redhat', version: '6') do |node|
         node.automatic['virtualization']['role'] = 'guest'
       end.converge(described_recipe)
     end

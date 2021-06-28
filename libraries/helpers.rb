@@ -37,7 +37,7 @@ module BindCookbook
         run_group: 'named',
         options_file: '/etc/named/named.options',
         conf_file: '/etc/named.conf',
-        service_name: chroot && (platform?('fedora') || node['platform_version'].to_s >= '7.0') ? 'named-chroot' : 'named',
+        service_name: chroot && (platform?('fedora') || node['platform_version'] >= '7.0') ? 'named-chroot' : 'named',
         rndc_key_file: '/etc/rndc.key',
       }[property_name]
     end

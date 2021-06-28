@@ -57,7 +57,7 @@ action :create do
       )
     )
 
-    persisted_values = node.default['bind']['zone'][new_resource.file_name]
+    persisted_values = node.normal['bind']['zone'][new_resource.file_name]
 
     # override soa with the value in persisted_values if it exists
     soa[:serial] = persisted_values['serial'] if persisted_values.attribute?('serial')
